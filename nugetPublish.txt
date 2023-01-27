@@ -1,0 +1,11 @@
+add source "http://localhost/nuget" //optional first time
+
+dotnet pack SendingScheduler.Core/SendingScheduler.Core.csproj -c Release  -p:Version=1.0.0.0  -p:PackageVersion=1.0.0.00
+dotnet pack SendingScheduler.Queue/SendingScheduler.Queue.csproj -c Release  -p:Version=1.0.0.0  -p:PackageVersion=1.0.0.00
+dotnet pack SendingScheduler.Send/SendingScheduler.Send.csproj -c Release  -p:Version=1.0.0.0  -p:PackageVersion=1.0.0.00
+dotnet pack SendingScheduler.Results/SendingScheduler.Results.csproj -c Release  -p:Version=1.0.0.0  -p:PackageVersion=1.0.0.00
+
+dotnet nuget push C:\Repos\SendingScheduler\SendingScheduler.Core\bin\Release\SendingScheduler.Core.1.0.0.1.nupkg -k name -s  http://localhost/nuget/
+dotnet nuget push C:\Repos\SendingScheduler\SendingScheduler.Queue\bin\Release\SendingScheduler.Queue.1.0.0.1.nupkg -k name -s  http://localhost/nuget/
+dotnet nuget push C:\Repos\SendingScheduler\SendingScheduler.Send\bin\Release\SendingScheduler.Send.1.0.0.1.nupkg -k name -s  http://localhost/nuget/
+dotnet nuget push C:\Repos\SendingScheduler\SendingScheduler.Results\bin\Release\SendingScheduler.Results.1.0.0.1.nupkg -k name -s  http://localhost/nuget/
